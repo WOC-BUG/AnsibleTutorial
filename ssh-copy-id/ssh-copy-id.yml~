@@ -9,4 +9,4 @@
       key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
     become: true # 以上模块使用时执行 提升权限 操作
     become_user: root # 使用 root 用户身份执行该模块
-    become_method: sudo # 提升权限使用到的方法。由于部分操作系统默认没有安装 sudo ，只有 su，例如Debian 9最小化安装方式。所以此处用的是 su
+    become_method: su # 提升权限使用到的方法。由于部分操作系统默认没有安装 sudo ，只有 su，例如Debian 9最小化安装方式。所以此处用的是 su
